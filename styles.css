@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.images {
+    height: 110vh;
+    width: 110vw;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.base {
+    position: absolute;
+    z-index: 0;
+    height:120vh;
+    /* display:none; */
+}
+
+.logo{
+    position:absolute;
+    z-index:1;
+    height:45vh;
+    width:45vw;
+    left:580px;
+    /* top:180px; */
+    top:500px;
+    animation: myfirst 5s;
+    animation-fill-mode: forwards;
+    /* opacity:0; */
+}
+
+@keyframes myfirst {
+    /* 0%   {top: 500px;} */
+    /* 25%  {top: 400px;}
+    50%  {top: 300px;}
+    75%  {top: 200px;} */
+    100% {top: 180px;}
+}
+
+.middle {
+    position: absolute;
+    z-index: 2;
+    /* display: none; */
+}
+
+.front {
+    position: absolute;
+    z-index: 3;
+    height:115vh;
+    left:-60px;
+    top:-30px;
+    /* display:none; */
+}
