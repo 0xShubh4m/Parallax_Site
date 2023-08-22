@@ -1,1 +1,1 @@
-# RYM-Grenergy-
+# Parallax Using HTML, CSS and Javascript
