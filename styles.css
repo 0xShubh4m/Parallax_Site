@@ -29,7 +29,7 @@ body {
     left:750px;
     /* top:180px; */
     top:500px;
-    animation: myfirst 5s;
+    animation: myfirst 3s;
     animation-fill-mode: forwards;
     /* opacity:0; */
 }
@@ -39,7 +39,7 @@ body {
     /* 25%  {top: 400px;}
     50%  {top: 300px;}
     75%  {top: 200px;} */
-    100% {top: 180px;}
+    100% {top: 250px;}
 }
 
 .middle {
