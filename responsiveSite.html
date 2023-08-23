@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container-fluid{
+            height:100vh;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .base{
+            position:absolute;
+            height:100vh;
+            width:100vw;
+            object-fit:cover;
+        }
+        .middle{
+            position: absolute;
+            height: 100vh;
+            width:100vw;
+            object-fit:cover;
+        }
+        .logo{
+            position:absolute;
+            height: 100vh;
+            width:100vw;
+            min-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="baseRow">
+                <img src="./Layers/Base Sky.png" alt="" class="base">
+                <!-- <h1 class="name">hello</h1> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="logoRow">
+                <img src="./Layers/Logo Layer.png" alt="" class="logo">
+            </div>
+        </div>
+        <div class="row">
+            <div class="middleRow">
+                <img src="./Layers/Middle Layer.png" alt="" class="middle">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
