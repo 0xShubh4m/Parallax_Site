@@ -26,7 +26,7 @@ body {
     z-index:1;
     height:45vh;
     width:45vw;
-    left:580px;
+    left:750px;
     /* top:180px; */
     top:500px;
     animation: myfirst 5s;
@@ -52,7 +52,49 @@ body {
     position: absolute;
     z-index: 3;
     height:115vh;
-    left:-60px;
-    top:-30px;
+    left:-80px;
+    top:-40px;
     /* display:none; */
+}
+
+@media (max-width: 480px){
+    .base{
+        width:300vw;
+        left:-100px;
+        /* display:none; */
+    }
+
+    .logo{
+        left:70px;
+        height:30vh;
+        width:80vw;
+        animation: myfirst 5s;
+        animation-fill-mode: forwards;
+        /* display:none; */
+    }
+
+    @keyframes myfirst {
+        /* 0%   {top: 500px;} */
+        /* 25%  {top: 400px;}
+        50%  {top: 300px;}
+        75%  {top: 200px;} */
+        100% {top: 350px;}
+    }
+
+    .middle{
+        width:350vw;
+        left:-330px;
+        height:95vh;
+        top:150px;
+        /* display:none; */
+    }
+
+    .front{
+        height:115vh;
+        width:120vw;
+        left:-50px;
+        /* top:5px; */
+        display:none;
+    }
+
 }
