@@ -57,7 +57,7 @@ if (mediaQuery.matches) {
         }
     })
     var hover = false;
-    $(".Yograj").hover(function () {
+    $(".hoverEffect1").hover(function () {
         if (hover == false) {
             $(".col1").removeClass("notOnHover");
             $(".col1").addClass("onHover");
@@ -81,7 +81,7 @@ if (mediaQuery.matches) {
             hover = false;
         }
     })
-    $(".Rohan").hover(function () {
+    $(".hoverEffect2").hover(function () {
         if (hover == false) {
             $(".col2").removeClass("notOnHover");
             $(".col2").addClass("onHover");
@@ -105,7 +105,7 @@ if (mediaQuery.matches) {
             hover = false;
         }
     })
-    $(".Mohit").hover(function () {
+    $(".hoverEffect3").hover(function () {
         if (hover == false) {
             $(".col3").removeClass("notOnHover");
             $(".col3").addClass("onHover");
@@ -129,7 +129,7 @@ if (mediaQuery.matches) {
             hover = false;
         }
     })
-    $(".Shubham").hover(function () {
+    $(".hoverEffect4").hover(function () {
         if (hover == false) {
             $(".col4").removeClass("notOnHover");
             $(".col4").addClass("onHover");
