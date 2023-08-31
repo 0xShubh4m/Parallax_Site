@@ -484,6 +484,8 @@ body {
     padding: 0 1.8rem;
     text-decoration: none;
     text-align: left;
+    /* border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem; */
 }
 
 .year {
@@ -493,17 +495,22 @@ body {
     background-color: rgba(0, 0, 0, 0.579);
     height: 50%;
     opacity: 0;
-    left:2rem;
+    left: 2rem;
+    /* border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem; */
 }
 
 .y1month {
     display: flex;
-    flex-direction:column;
-    position:relative;
+    flex-direction: column;
+    position: relative;
     background-color: rgba(0, 0, 0, 0.579);
     opacity: 0;
-    left:2rem;  
+    left: 2rem;
     text-align: center;
+    height: 50%;
+    /* border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem; */
 }
 
 .y2month {
@@ -512,41 +519,63 @@ body {
     right: 9.25rem;
     top: 2.5rem;
     opacity: 0;
-    height:25%;
+    height: 25%;
+    /* border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem; */
 }
 
 .y1m1event {
     position: relative;
     background-color: rgba(0, 0, 0, 0.579);
-    right: 8.25rem;
+    right: 8.28rem;
     opacity: 0;
+    /* height: 50rem; */
+    /* width: 100rem; */
+    /* padding:0 5rem; */
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    /* border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem; */
 }
 
 .y1m2event {
     position: relative;
     background-color: rgba(0, 0, 0, 0.579);
-    right: 16.1rem;
+    right: 34.9rem;
     top: 2.5rem;
     height: 75%;
     opacity: 0;
+    display: flex;
+    flex-direction: column;
+    /* border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem; */
 }
 
 .y1m3event {
     position: relative;
     background-color: rgba(0, 0, 0, 0.579);
     height: 25%;
-    right: 23.95rem;
+    right: 66.5rem;
     top: 5rem;
     opacity: 0;
+    display: flex;
+    flex-direction: column;
+    /* border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem; */
 }
 
 .y1m4event {
     position: relative;
     background-color: rgba(0, 0, 0, 0.579);
-    right: 31.9rem;
+    right: 77.5rem;
     height: 50%;
     top: 7.5rem;
     opacity: 0;
+    display: flex;
+    flex-direction: column;
+    /* border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem; */
 }
 
 .nav2 a:hover {
@@ -555,17 +584,41 @@ body {
     font-weight: 100;
     background-color: rgba(0, 0, 0, 0.662);
 }
-.y1month .month2{
-    padding:0 2.9rem;
-}
-.y1month .month3{
-    padding:0 3.55rem;
-}
-.y1month .month4{
-    padding:0 3.85rem;
+
+.y1month .month2 {
+    padding: 0 2.9rem;
 }
 
+.y1month .month3 {
+    padding: 0 3.55rem;
+}
 
+.y1month .month4 {
+    padding: 0 3.85rem;
+}
+
+.y1m1event>.text {
+    width: 23rem;
+    /* height: 2rem; */
+    font-size: 1.7rem;
+    /* font-size: 1.5rem; */
+}
+.y1m2event>.text{
+    width: 28rem;
+    font-size: 1.7rem;
+}
+.y1m4event>.text{
+    width: 30rem;
+    font-size: 1.7rem;
+}
+.nav2Content{
+    position: relative;
+    height: 80%;
+    width: 90%;
+    top:10%;
+    left:5%;
+    background-color: rgba(0, 0, 0, 0.821);
+}
 
 
 
