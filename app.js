@@ -2,6 +2,8 @@ const mediaQuery = window.matchMedia('(min-width: 480px)')
 var hamClick = false;
 var nav4Click = false;
 var nav1Click = false;
+var nav2Click = false;
+var clickCounter=0;
 if (mediaQuery.matches) {
     document.addEventListener("mousemove", parallax);
     function parallax(e) {
@@ -13,12 +15,16 @@ if (mediaQuery.matches) {
         });
     }
     $(".bt1").on("click", function () {
-        if (nav1Click == false && nav4Click == false) {
+        if (nav1Click == false && nav4Click == false && nav2Click == false && clickCounter==0) {
             $(".front-layer").addClass("frontAnimation");
             $(".parallax").removeClass("parallax");
             setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
             $(".middle-layer").addClass("middleAnimation");
             $(".name").fadeTo("slow", 0);
+            $(".nav1").addClass("nav1Animation");
+            nav1Click = true;
+        }
+        else if (nav1Click == false && nav4Click == false && nav2Click == false){
             $(".nav1").addClass("nav1Animation");
             nav1Click = true;
         }
@@ -32,18 +38,26 @@ if (mediaQuery.matches) {
             nav4Click = false;
         }
         else if (nav2Click == true) {
-            console.log("clicked");
+            $(".nav1").removeClass("nav1AnimationRev");
             $(".nav1").addClass("nav1Animation");
+            $(".year").css("opacity", "0");
+            $(".year").css("z-index", "0");
+            nav2Click = false;
+            nav1Click = true;
         }
     })
     $(".bt4").on("click", function () {
         $(".team-heading").animate({ bottom: "15rem" }, "slow");
-        if (nav4Click == false && nav1Click == false) {
+        if (nav4Click == false && nav1Click == false && nav2Click == false && clickCounter==0) {
             $(".front-layer").addClass("frontAnimation");
             $(".parallax").removeClass("parallax");
             setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
             $(".middle-layer").addClass("middleAnimation");
             $(".name").fadeTo("slow", 0);
+            $(".nav4Content").addClass("nav4Animation");
+            nav4Click = true;
+        }
+        else if(nav4Click == false && nav1Click == false && nav2Click == false){
             $(".nav4Content").addClass("nav4Animation");
             nav4Click = true;
         }
@@ -55,6 +69,14 @@ if (mediaQuery.matches) {
             nav4Click = true;
             nav1Click = false;
         }
+        else if (nav2Click == true) {
+            $(".nav4Content").addClass("nav4Animation");
+            $(".nav4Content").removeClass("nav4AnimationRev");
+            $(".year").css("opacity", "0");
+            $(".year").css("z-index", "0");
+            nav2Click = false;
+            nav4Click = true;
+        }
     })
     var hover = false;
     $(".hoverEffect1").hover(function () {
@@ -62,9 +84,9 @@ if (mediaQuery.matches) {
             $(".col1").removeClass("notOnHover");
             $(".col1").addClass("onHover");
             $(".Yograj").css("border-bottom-right-radius", "0rem");
-            $(".col2").css("filter", "blur(0.2rem)")
-            $(".col3").css("filter", "blur(0.2rem)")
-            $(".col4").css("filter", "blur(0.2rem)")
+            $(".col2").css("filter", "blur(0.2rem)");
+            $(".col3").css("filter", "blur(0.2rem)");
+            $(".col4").css("filter", "blur(0.2rem)");
             $(".info1").css("opacity", "1");
             $(".info1").css("border-bottom-right-radius", "4rem");
             hover = true;
@@ -153,12 +175,39 @@ if (mediaQuery.matches) {
             hover = false;
         }
     })
-    var nav2Click = false;
     $(".bt2").click(function () {
-        if (nav2Click == false) {
+        clickCounter++;
+        if (nav2Click == false && nav1Click==false && nav4Click==false && clickCounter==1) {
+            $(".year").css("opacity", "1");
+            $(".year").css("z-index", "1000");
+            $(".front-layer").addClass("frontAnimation");
+            $(".parallax").removeClass("parallax");
+            setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+            $(".middle-layer").addClass("middleAnimation");
+            $(".name").fadeTo("slow", 0);
+            nav2Click = true;
+        }
+        else if(nav2Click == false && nav1Click==false && nav4Click==false){
             $(".year").css("opacity", "1");
             $(".year").css("z-index", "1000");
             nav2Click = true;
+        }
+        else if(nav1Click==true){
+            $(".nav1").addClass("nav1AnimationRev");
+            $(".nav1").removeClass("nav1Animation");
+            $(".year").css("opacity", "1");
+            $(".year").css("z-index", "1000");
+            nav1Click=false;
+            nav2Click=true;
+        }
+        else if(nav4Click==true){
+            $(".nav4Content").addClass("nav4AnimationRev");
+            $(".nav4Content").removeClass("nav4Animation");
+            $(".team-heading").animate({bottom:"100rem"});
+            $(".year").css("opacity", "1");
+            $(".year").css("z-index", "1000");
+            nav4Click=false;
+            nav2Click=true;
         }
         else {
             $(".year").css("opacity", "0");
@@ -166,6 +215,7 @@ if (mediaQuery.matches) {
             nav2Click = false;
         }
     })
+    var eventClick = false;
     var year1Hover = false;
     $(".year1").hover(function () {
         if (year1Hover == false) {
@@ -192,14 +242,29 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
-                                    $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                $(".eventWindow").removeClass("eventWindowAnimationRev");
+                                $(".eventWindow").addClass("eventWindowAnimation");
+                                if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    // $(".front-layer").addClass("frontAnimation");
+                                    // $(".parallax").removeClass("parallax");
+                                    // setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    // $(".middle-layer").addClass("middleAnimation");
+                                    // $(".name").fadeTo("slow", 0);
+                                    $(".year").animate({ opacity: "1" });
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav1Click) {
+                                    $(".nav1").addClass("nav1AnimationRev");
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
                                 }
                             })
                             y1m1event1Hover = true;
@@ -226,14 +291,26 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
+                                if (nav1Click) {
                                     $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    $(".front-layer").addClass("frontAnimation");
+                                    $(".parallax").removeClass("parallax");
+                                    setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    $(".middle-layer").addClass("middleAnimation");
+                                    $(".name").fadeTo("slow", 0);
+                                    eventClick = true;
                                 }
                             })
                             y1m1event2Hover = true;
@@ -260,14 +337,27 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
+                                if (nav1Click) {
                                     $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    // $(".front-layer").addClass("frontAnimation");
+                                    // $(".parallax").removeClass("parallax");
+                                    // setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    // $(".middle-layer").addClass("middleAnimation");
+                                    // $(".name").fadeTo("slow", 0);
+                                    $(".year").animate({ opacity: "1" });
+                                    eventClick = true;
                                 }
                             })
                             y1m1event3Hover = true;
@@ -294,14 +384,26 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
+                                if (nav1Click) {
                                     $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    $(".front-layer").addClass("frontAnimation");
+                                    $(".parallax").removeClass("parallax");
+                                    setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    $(".middle-layer").addClass("middleAnimation");
+                                    $(".name").fadeTo("slow", 0);
+                                    eventClick = true;
                                 }
                             })
                             y1m1event4Hover = true;
@@ -345,14 +447,27 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
+                                if (nav1Click) {
                                     $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    // $(".front-layer").addClass("frontAnimation");
+                                    // $(".parallax").removeClass("parallax");
+                                    // setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    // $(".middle-layer").addClass("middleAnimation");
+                                    // $(".name").fadeTo("slow", 0);
+                                    $(".year").animate({ opacity: "1" });
+                                    eventClick = true;
                                 }
                             })
                             y1m2event1Hover = true;
@@ -379,14 +494,27 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
+                                if (nav1Click) {
                                     $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    // $(".front-layer").addClass("frontAnimation");
+                                    // $(".parallax").removeClass("parallax");
+                                    // setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    // $(".middle-layer").addClass("middleAnimation");
+                                    // $(".name").fadeTo("slow", 0);
+                                    $(".year").animate({ opacity: "1" });
+                                    eventClick = true;
                                 }
                             })
                             y1m2event2Hover = true;
@@ -413,14 +541,27 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
+                                if (nav1Click) {
                                     $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    // $(".front-layer").addClass("frontAnimation");
+                                    // $(".parallax").removeClass("parallax");
+                                    // setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    // $(".middle-layer").addClass("middleAnimation");
+                                    // $(".name").fadeTo("slow", 0);
+                                    $(".year").animate({ opacity: "1" });
+                                    eventClick = true;
                                 }
                             })
                             y1m2event3Hover = true;
@@ -464,14 +605,27 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
+                                if (nav1Click) {
                                     $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    // $(".front-layer").addClass("frontAnimation");
+                                    // $(".parallax").removeClass("parallax");
+                                    // setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    // $(".middle-layer").addClass("middleAnimation");
+                                    // $(".name").fadeTo("slow", 0);
+                                    $(".year").animate({ opacity: "1" });
+                                    eventClick = true;
                                 }
                             })
                             y1m3event1Hover = true;
@@ -515,14 +669,27 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
+                                if (nav1Click) {
                                     $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    // $(".front-layer").addClass("frontAnimation");
+                                    // $(".parallax").removeClass("parallax");
+                                    // setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    // $(".middle-layer").addClass("middleAnimation");
+                                    // $(".name").fadeTo("slow", 0);
+                                    $(".year").animate({ opacity: "1" });
+                                    eventClick = true;
                                 }
                             })
                             y1m4event1Hover = true;
@@ -549,14 +716,26 @@ if (mediaQuery.matches) {
                                 $(".y1month").css("z-index", "0");
                                 $(".year").css("opacity", "0");
                                 $(".year").css("z-index", "0");
-                                if(nav1Click){
+                                if (nav1Click) {
                                     $(".nav1").addClass("nav1AnimationRev");
-                                    nav1Click=true;
+                                    $(".nav1").removeClass("nav1Animation");
+                                    nav1Click = false;
+                                    eventClick = true;
                                 }
-                                else if (nav4Click){
+                                else if (nav4Click) {
                                     $(".nav4Content").addClass("nav4AnimationRev");
-                                    $(".team-heading").animate({bottom:"100rem"});
-                                    nav4Click=true;
+                                    $(".nav4Content").removeClass("nav4Animation");
+                                    $(".team-heading").animate({ bottom: "100rem" });
+                                    nav4Click = false;
+                                    eventClick = true;
+                                }
+                                else if (nav4Click == false && nav1Click == false && eventClick == false) {
+                                    // $(".front-layer").addClass("frontAnimation");
+                                    // $(".parallax").removeClass("parallax");
+                                    // setTimeout(function () { $(".front-layer").fadeToggle() }, 300);
+                                    // $(".middle-layer").addClass("middleAnimation");
+                                    // $(".name").fadeTo("slow", 0);
+                                    eventClick = true;
                                 }
                             })
                             y1m4event2Hover = true;
@@ -613,6 +792,11 @@ if (mediaQuery.matches) {
             $(".y2month").css("z-index", "0");
             year2Hover = false;
         }
+    })
+    $(".main>.back").click(function () {
+        $(".year").css("opacity", "1");
+        $(".year").css("z-index", "1000");
+        $(".eventWindow").addClass("eventWindowAnimationRev");
     })
 }
 else {

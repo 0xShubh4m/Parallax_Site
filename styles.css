@@ -611,16 +611,132 @@ body {
     width: 30rem;
     font-size: 1.7rem;
 }
-.nav2Content{
-    position: relative;
-    height: 80%;
-    width: 90%;
-    top:10%;
-    left:5%;
-    background-color: rgba(0, 0, 0, 0.821);
+.eventWindow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0;
+    top:100rem;
+    /* display: none; */
+    user-select: none;
 }
-
-
+.eventWindowAnimation{
+    animation: eventWindowAnimation 1.5s;
+    animation-fill-mode:forwards;
+}
+@keyframes eventWindowAnimation {
+    0%{
+        opacity: 0;
+        top:100rem;
+        z-index:0;
+    }
+    100%{
+        opacity: 1;
+        top:0;
+        z-index: 1000;
+    }
+}
+.eventWindowAnimationRev{
+    animation: eventWindowAnimationRev 1.5s;
+    animation-fill-mode:forwards;
+}
+@keyframes eventWindowAnimationRev {
+    0%{
+        opacity: 1;
+        top:0rem;
+        z-index:1000;
+    }
+    100%{
+        opacity: 0;
+        top:100rem;
+        z-index: 0;
+    }
+}
+.eventWindow>.main{
+    position:relative;
+    height: 55%;
+    width: 55%;
+    background-color: rgba(0, 0, 0, 0.675);
+    top:15%;
+    left:25%;
+    /* border-bottom-right-radius: 10rem;
+    border-top-left-radius: 10rem; */
+    border-radius:2rem;
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Signika Negative', sans-serif;
+    box-shadow:2rem 2rem 5rem black;
+}
+.main>.topContent{
+    display: flex;
+}
+.points{
+    width: 50%;
+    height: fit-content;
+}
+.carousel{
+    background-color: red;
+    width: 40%;
+    height: 88%;
+    border-radius:0.5rem;
+    margin-top:1rem;
+    overflow: hidden;
+    display: flex;
+    margin: 0 auto;
+}
+.eventInfo{
+    padding-top:2rem;
+    height: fit-content;
+    width: auto;
+    text-align: justify;
+    padding: 0;
+}
+.carousel>.pic{
+    position:relative;
+    height: 100%;
+    width: 150%;
+    animation: carousel infinite 8s;
+    user-select: none;
+}
+@keyframes carousel {
+    0%{
+        right:0;
+    }
+    25%{
+        right:100%;
+    }
+    50%{
+        right:224%;
+    }
+    75%{
+        right:100%;
+    }
+    100%{
+        right:0;
+    }
+}
+.points>hr{
+    color:black;
+}
+.topContent{
+    height: 35vh;
+}
+.main>.back{
+    height: 2rem;
+    width: 6rem;
+    margin:auto;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    border: 0;
+    /* border: 0; */
+}
 
 
 
