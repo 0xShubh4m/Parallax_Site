@@ -1,212 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RYM Grenergy Solution - Pioneering innovative energy storage solutions with Uni-Polar Programmed Supercapacitor technology for a sustainable future.">
+    <meta name="keywords" content="energy storage, supercapacitor, renewable energy, sustainable technology, MSME startup">
+    <title>RYM Grenergy Solution - Innovative Energy Storage Technology</title>
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&family=Mukta&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="preconnect" href="https://ajax.googleapis.com">
+    
+    <!-- Optimized font loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&family=Mukti:wght@400&family=Kalam:wght@400;700&family=ADLaM+Display&family=Bricolage+Grotesque:opsz@10..48&family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./styles.css">
+    
+    <!-- jQuery with integrity check and fallback -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" 
+            integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" 
+            crossorigin="anonymous"></script>
+    <script>
+        if (!window.jQuery) {
+            document.write('<script src="./js/jquery-3.6.4.min.js"><\/script>');
+        }
+    </script>
 </head>
 
 <body>
     <div class="container">
-        <div class="navbar">
-            <!-- <a href="#"><img src="./layers/Logo-Trans.png" class="navbar__logo"></a> -->
-            <div class="hamburger">
+        <!-- Header Navigation -->
+        <header class="navbar" role="banner">
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar-menu">
                 <div class="circle">
-                    <hr class="cross1 line">
-                    <hr class="cross2 line">
+                    <span class="cross1 line" aria-hidden="true"></span>
+                    <span class="cross2 line" aria-hidden="true"></span>
                 </div>
-            </div>
-            <nav class="navbar__menu">
+            </button>
+            
+            <nav class="navbar__menu" id="navbar-menu" role="navigation">
                 <ul>
-                    <li class="buttons bt"></li>
-                    <li><a href="#" class="buttons bt1">Who are we?</a></li>
-                    <li><a href="#" class="buttons bt2">Achievements</a></li>
-                    <li><a href="#" class="buttons bt3">Home</a></li>
-                    <li><a href="#" class="buttons bt4">Members</a></li>
-                    <li><a href=" #" class="buttons bt5">Contact</a></li>
+                    <li><a href="#home" class="buttons bt3">Home</a></li>
+                    <li><a href="#about" class="buttons bt1">Who are we?</a></li>
+                    <li><a href="#team" class="buttons bt4">Team</a></li>
+                    <li><a href="#achievements" class="buttons bt2">Achievements</a></li>
+                    <li><a href="#contact" class="buttons bt5">Contact</a></li>
                 </ul>
             </nav>
-        </div>
-        <div class="nav1">
-            <div class="heading">Who are we?</div>
-            <p class="paragraph">We are RYM Grenergy Solution Pvt Ltd, a forward-thinking MSME startup venture committed
-                to pioneering innovative solutions in the field of energy storage. Our core mission is to revolutionize
-                the way we store and utilize energy for a more sustainable and efficient future.
+        </header>
 
-                At RYM Grenergy Solution Pvt Ltd, we specialize in the development and deployment of the Uni-Polar
-                Programmed Supercapacitor, an advanced energy storage technology. This cutting-edge solution combines
-                the benefits of traditional supercapacitors with unique features, offering superior energy efficiency,
-                safety, and reliability compared to conventional battery systems.
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="hero" aria-label="Company introduction">
+                <div class="parallax-container">
+                    <img src="./layers/layer-base.png" alt="" class="parallax base-layer" data-value="-12" loading="lazy">
+                    <h1 class="parallax company-name" data-value="-10">RYM Grenergy</h1>
+                    <img src="./layers/layer-middle.png" alt="" class="parallax middle-layer" data-value="-8" loading="lazy">
+                    <img src="./layers/Front Layer.png" alt="" class="parallax front-layer" data-value="4" loading="lazy">
+                </div>
+            </section>
 
-                Our commitment to excellence is evident through our numerous awards and recognitions, both from
-                prestigious institutions and in international competitions. We are actively engaged in ongoing projects
-                in Gurugram, India, where we are implementing and testing our groundbreaking technology in real-world
-                scenarios. These projects aim to demonstrate the effectiveness and reliability of the Uni-Polar
-                Programmed Supercapacitor in various applications, ultimately contributing to more sustainable energy
-                consumption in residential communities.
+            <!-- About Section -->
+            <section id="about" class="nav1" aria-labelledby="about-heading">
+                <h2 id="about-heading" class="heading">Who are we?</h2>
+                <div class="paragraph">
+                    <p>We are <strong>RYM Grenergy Solution Pvt Ltd</strong>, a forward-thinking MSME startup venture committed to pioneering innovative solutions in the field of energy storage. Our core mission is to revolutionize the way we store and utilize energy for a more sustainable and efficient future.</p>
+                    
+                    <p>At RYM Grenergy Solution Pvt Ltd, we specialize in the development and deployment of the <em>Uni-Polar Programmed Supercapacitor</em>, an advanced energy storage technology. This cutting-edge solution combines the benefits of traditional supercapacitors with unique features, offering superior energy efficiency, safety, and reliability compared to conventional battery systems.</p>
+                    
+                    <p>Our commitment to excellence is evident through our numerous awards and recognitions, both from prestigious institutions and in international competitions. We are actively engaged in ongoing projects in Gurugram, India, where we are implementing and testing our groundbreaking technology in real-world scenarios.</p>
+                    
+                    <p>As a company, we are dedicated to innovation, research, and development, with a strong focus on creating environmentally friendly energy solutions that address the pressing challenges of our time.</p>
+                </div>
+            </section>
 
-                As a company, we are dedicated to innovation, research, and development, with a strong focus on creating
-                environmentally friendly energy solutions that address the pressing challenges of our time. Our journey
-                is marked by a relentless pursuit of excellence in the realm of energy storage, and we invite you to
-                join us in shaping a greener and more efficient future.</p>
+            <!-- Team Section -->
+            <section id="team" class="nav4" aria-labelledby="team-heading">
+                <h2 id="team-heading" class="team-heading">Meet our team</h2>
+                
+                <div class="team-grid">
+                    <article class="team-member" data-member="yograj">
+                        <div class="member-card">
+                            <img src="./layers/director's images/Yograj.jpg" alt="Yograj Rudhankar - CEO" class="member-image" loading="lazy">
+                            <h3 class="member-name">Yograj Rudhankar</h3>
+                            <p class="position">CEO</p>
+                        </div>
+                        <div class="member-info">
+                            <p>Yograj Rundhanker is a pioneering researcher, engineer, and entrepreneur dedicated to a sustainable future. Merging his expertise in physics, programming, and entrepreneurship, he founded RYM Grenergy Solution Pvt. Ltd. He has revolutionized renewable energy tech, developed advanced storage systems, and championed efficient practices across industries.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-member" data-member="rohan">
+                        <div class="member-card">
+                            <img src="./layers/director's images/Rohan.jpg" alt="Rohan Mathur - Lead Researcher" class="member-image" loading="lazy">
+                            <h3 class="member-name">Rohan Mathur</h3>
+                            <p class="position">Lead Researcher</p>
+                        </div>
+                        <div class="member-info">
+                            <p>Rohan Mathur, our Co-Founder, brings his expertise in publishing and research to RYM Grenergy Solution Pvt Ltd. As the Head of Publishing and Research, Rohan leads our team in conducting in-depth research on sustainable energy solutions, ensuring that our organization remains innovative and consistently provides valuable insights.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-member" data-member="mohit">
+                        <div class="member-card">
+                            <img src="./layers/director's images/Mohit.jpg" alt="Mohit Yadhuvanshi - Head Engineer" class="member-image" loading="lazy">
+                            <h3 class="member-name">Mohit Yadhuvanshi</h3>
+                            <p class="position">Head Engineer</p>
+                        </div>
+                        <div class="member-info">
+                            <p>Mohit, another Co-Founder, holds a crucial role as the Head of Engineering and HR Department. With his proficiency in engineering and human resource management, Mohit leads the product development process and manages our talented team of engineers, ensuring we have a skilled and motivated workforce.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-member" data-member="shubham">
+                        <div class="member-card">
+                            <img src="./layers/director's images/Shubham.jpg" alt="Shubham Shakti - CTO" class="member-image" loading="lazy">
+                            <h3 class="member-name">Shubham Shakti</h3>
+                            <p class="position">CTO</p>
+                        </div>
+                        <div class="member-info">
+                            <p>Shubham Shakti serves as our Chief Technology Officer, bringing technical expertise and strategic vision to drive our innovative energy storage solutions forward.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements" class="nav2" aria-labelledby="achievements-heading">
+                <h2 id="achievements-heading" class="sr-only">Our Achievements Timeline</h2>
+                
+                <div class="timeline">
+                    <div class="year-selector" role="tablist">
+                        <button class="year-tab active" role="tab" aria-selected="true" aria-controls="year-2023" id="tab-2023">2023</button>
+                        <button class="year-tab" role="tab" aria-selected="false" aria-controls="year-2024" id="tab-2024">2024</button>
+                    </div>
+
+                    <div id="year-2023" class="year-content active" role="tabpanel" aria-labelledby="tab-2023">
+                        <div class="timeline-months">
+                            <div class="month-section" data-month="february">
+                                <h3>February 2023</h3>
+                                <ul class="event-list">
+                                    <li><button class="event-btn" data-event="green-india">Green India Hackathon</button></li>
+                                    <li><button class="event-btn" data-event="innovation-5th">5th Innovation Hackathon</button></li>
+                                    <li><button class="event-btn" data-event="anveshana">Anveshana Competition</button></li>
+                                    <li><button class="event-btn" data-event="hack-krmu">Hack KRMU</button></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="month-section" data-month="march">
+                                <h3>March 2023</h3>
+                                <ul class="event-list">
+                                    <li><button class="event-btn" data-event="nec">National Entrepreneurship Conclave</button></li>
+                                    <li><button class="event-btn" data-event="vois">VOIS International Competition</button></li>
+                                    <li><button class="event-btn" data-event="great-india">Great India Hackathon</button></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="month-section" data-month="april">
+                                <h3>April 2023</h3>
+                                <ul class="event-list">
+                                    <li><button class="event-btn" data-event="techkriti">TechKriti</button></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="month-section" data-month="may">
+                                <h3>May 2023</h3>
+                                <ul class="event-list">
+                                    <li><button class="event-btn" data-event="innospark">Innospark Entrepreneurship Competition</button></li>
+                                    <li><button class="event-btn" data-event="ideathon">Ideathon 1.2</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="year-2024" class="year-content" role="tabpanel" aria-labelledby="tab-2024">
+                        <div class="timeline-months">
+                            <div class="month-section" data-month="january">
+                                <h3>January 2024</h3>
+                                <p>More achievements coming soon...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Event Detail Modal -->
+        <div id="event-modal" class="event-window" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+            <div class="modal-content">
+                <header class="modal-header">
+                    <button class="back-btn" aria-label="Close event details">Go Back</button>
+                    <h2 id="modal-title">Event Details</h2>
+                </header>
+                
+                <div class="modal-body">
+                    <div class="event-details">
+                        <div class="event-info-grid">
+                            <div class="event-text">
+                                <dl class="event-facts">
+                                    <dt>Team Name:</dt>
+                                    <dd>RYM Grenergy</dd>
+                                    <dt>Team Members:</dt>
+                                    <dd>Rohan Mathur, Mohit, Shubham Shakti</dd>
+                                    <dt>Competition:</dt>
+                                    <dd>Green India Hackathon, Manav Rachna University</dd>
+                                    <dt>Date:</dt>
+                                    <dd>3rd and 4th Feb, 2023</dd>
+                                    <dt>Position:</dt>
+                                    <dd>3rd</dd>
+                                    <dt>Prize:</dt>
+                                    <dd>₹5,000 + ₹25,000 worth shopping vouchers</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="event-gallery">
+                                <div class="image-carousel">
+                                    <img src="./layers/pic1.jpg" alt="Green India Hackathon team photo 1" class="carousel-image active" loading="lazy">
+                                    <img src="./layers/pic2.jpg" alt="Green India Hackathon team photo 2" class="carousel-image" loading="lazy">
+                                    <img src="./layers/pic3.jpeg" alt="Green India Hackathon team photo 3" class="carousel-image" loading="lazy">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+                                    <button class="carousel-btn next" aria-label="Next image">›</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-description">
+                            <p>RYM Grenergy, a team comprising Rohan Mathur (B.Sc Physics Hons., 2021-2024), Mohit (B.Sc Physics Hons., 2021-2024), and Shubham Shakti (B.Tech AIML, 2021-2025), participated in the Green India Hackathon at Manav Rachna University. The competition took place on 3rd and 4th February 2023. Impressively, the team secured the 3rd position, earning them a prize of ₹5,000. Their innovative approach and dedication in the hackathon showcased their potential to contribute towards sustainable solutions for a greener future.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="nav4">
-            <div class="team-heading">Meet our team</div>
-            <div class="nav4Content m1">
-                <div class="col1">
-                    <div class="hoverEffect1">
-                        <img src="./layers/director's images/Yograj.jpg" alt="" class="memberImage Yograj">
-                        <div class="memberName">Yograj Rudhankar</div>
-                        <div class="position">CEO</div>
-                    </div>
-                    <div class="info1 info">
-                        Yograj Rundhanker is a pioneering researcher, engineer, and entrepreneur dedicated to a
-                        sustainable future. Merging his expertise in physics, programming, and entrepreneurship, he
-                        founded RYM Grenergy Solution Pvt. Ltd. He has revolutionized renewable energy tech, developed
-                        advanced storage systems, and championed efficient practices across industries. With humility
-                        and determination, Yograj continues to push boundaries for a cleaner, greener, and more
-                        sustainable world.
-                    </div>
-                </div>
-                <div class="col2">
-                    <div class="hoverEffect2">
-                        <img src="./layers/director's images/Rohan.jpg" alt="" class="memberImage Rohan">
-                        <div class="memberName">Rohan Mathur</div>
-                        <div class="position">Lead Researcher</div>
-                    </div>
-                    <div class="info2 info">
-                        Rohan Mathur, our Co-Founder, brings his expertise in publishing and research to RYM Grenergy
-                        Solution Pvt Ltd. As the Head of Publishing and Research, Rohan leads our team in conducting
-                        in-depth research on sustainable energy solutions. He is dedicated to staying at the forefront
-                        of industry trends and technological advancements. Through his visionary approach, he ensures
-                        that our organization remains innovative and consistently provides valuable insights to our
-                        stakeholders.
-                    </div>
-                </div>
-            </div>
-            <div class="nav4Content m2">
-                <div class="col3">
-                    <div class="hoverEffect3">
-                        <img src="./layers/director's images/Mohit.jpg" alt="" class="memberImage Mohit">
-                        <div class="memberName">Mohit Yadhuvanshi</div>
-                        <div class="position">Head Engineer</div>
-                    </div>
-                    <div class="info3 info">
-                        Mohit, another Co-Founder, holds a crucial role as the Head of Engineering and HR Department.
-                        With his proficiency in engineering and human resource management, Mohit leads the product
-                        development process and manages our talented team of engineers. He is responsible for driving
-                        the creation of cutting-edge energy solutions that meet the highest quality standards.
-                        Additionally, Mohit oversees the human resource department, ensuring that we have a skilled and
-                        motivated workforce dedicated to our mission.
-                    </div>
-                </div>
-                <div class="col4">
-                    <div class="hoverEffect4">
-                        <img src="./layers/director's images/Shubham.jpg" alt="" class="memberImage Shubham">
-                        <div class="memberName">Shubham Shakti</div>
-                        <div class="position">CTO</div>
-                    </div>
-                    <div class="info4 info">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="nav2">
-            <div class="year">
-                <a href="#" class="year1 text">2023</a>
-                <a href="#" class="year2 text">2024</a>
-            </div>
-            <div class="y1month">
-                <a href="#" class="month1 text">February</a>
-                <a href="#" class="month2 text">March</a>
-                <a href="#" class="month3 text">April</a>
-                <a href="#" class="month4 text">May</a>
-            </div>
-            <div class="y2month">
-                <a href="#" class="month1 text">January</a>
-            </div>
-            <div class="y1m1event">
-                <a href="#" class="event1 text">Green India Hackathon</a>
-                <a href="#" class="event2 text">5th innovation Hackathon</a>
-                <a href="#" class="event3 text">Anveshana Competition</a>
-                <a href="#" class="event4 text">Hack KRMU</a>
-            </div>
-            <div class="y1m2event">
-                <a href="#" class="event1 text">National Entrepreneurship Conclave</a>
-                <a href="#" class="event2 text">VOIS International Competition</a>
-                <a href="#" class="event3 text">Great India Hackathon</a>
-            </div>
-            <div class="y1m3event">
-                <a href="#" class="event1 text">TechKriti</a>
-            </div>
-            <div class="y1m4event">
-                <a href="#" class="event1 text">Innospark Entrepreneurship competition</a>
-                <a href="#" class="event2 text">Ideathon 1.2</a>
-            </div>
-        </div>
-        <div class="eventWindow">
-            <div class="main">
-                <button class="back">Go Back</button>
-                <div class="topContent">
-                    <div class="points">
-                        Team Name: RYM Grenergy<br>
-                        <br>
-                        Team Members:Rohan Mathur, Mohit, Shubham Shankti<br>
-                        <br>
-                        Competition: Green India Hackathon, Manav Rachna University<br>
-                        <br>
-                        Date: 3rd and 4th Feb, 2023<br>
-                        <br>
-                        Position: 3rd<br>
-                        <br>
-                        Prize: ₹5,000 + 25,000 worth shopping vouchers
-                        <br>
-                    </div>
-                    <div class="carousel">
-                        <img src="./layers/pic1.jpg" alt="" class="pic pic1">
-                        <img src="./layers/pic2.jpg" alt="" class="pic pic2">
-                        <img src="./layers/pic3.jpeg" alt="" class="pic pic3">
-                    </div>
-                </div>
-                <div class="eventInfo">
-                    RYM Grenergy, a team comprising Rohan Mathur (B.Sc Physics Hons., 2021-2024), Mohit (B.Sc Physics
-                    Hons., 2021-2024), and Shubham Shankti (B.Tech AIML, 2021-2025), participated in the Green India
-                    Hackathon at Manav Rachna University. The competition took place on 3rd and 4th February 2023.
-                    Impressively, the team secured the 3rd position, earning them a prize of ₹5,000. Their innovative
-                    approach and dedication in the hackathon showcased their potential to contribute towards sustainable
-                    solutions for a greener future.
-                </div>
-            </div>
-        </div>
-        <img src="./layers/layer-base.png" alt="sky" class="parallax base-layer" data-value="-12">
-        <div class="parallax name" data-value="-10">RYM Grenergy</div>
-        <img src="./layers/layer-middle.png" alt="mid-buildings" class="parallax middle-layer" data-value="-8">
-        <img src="./layers/Front Layer.png" alt="side-buildings" class="parallax front-layer" data-value="4">
     </div>
-    <script src="./app.js">
-    </script>
-</body>
 
+    <!-- Scripts -->
+    <script src="./js/app.js" defer></script>
+    
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+</body>
 </html>
